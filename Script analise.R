@@ -14,7 +14,7 @@ View(Dicionario)
 library(dplyr)
 library(ggplot2)
 #Questao 5
-#Exercicio A
+#Exercicio A Modificar as variáveis qualitativas e transformar em fatores
 
 #Utilizando ctrl+shift+m, codificador pipe, que indica que as mudanças feitas a seguir deverão ser aplicadas
 Base <- Base %>% 
@@ -31,3 +31,12 @@ Base <- Base %>%
 #Visualizando a base
 str(Base)
 View(Base)
+
+
+#Questao 5 - Letra B Analise sobre dados faltantes
+
+#Analisar quantos dados Not Available tem no total, em toda a base
+total_na<- sum(is.na(Base))
+total_na
+#Após essa análise, identifiquei que a base está completa e não apresenta dados faltantes
+
