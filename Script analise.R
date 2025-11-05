@@ -40,3 +40,16 @@ total_na<- sum(is.na(Base))
 total_na
 #Após essa análise, identifiquei que a base está completa e não apresenta dados faltantes
 
+#Questao 5 - Letra C - Histograma da variável idade
+histog_idade <- ggplot(Base, aes(x = idade)) +
+  geom_histogram(binwidth = 5, fill = "blue", color = "white") +
+  labs(
+    title = "Histograma de Idade",
+    x = "Idade (em anos)",
+    y = "Frequência"
+  ) +
+  theme_minimal()
+
+print(histog_idade)
+
+
