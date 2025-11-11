@@ -50,4 +50,44 @@ q1_tempopreso = quantile(Base$tempo_preso , 0.25, na.rm = TRUE)
 mediana_tempopreso = median(Base$tempo_preso , na.rm = TRUE)
 q3_tempopreso = quantile(Base$tempo_preso , 0.75, na.rm = TRUE)
 
+#Questao 9 - C - grafico de dispersao
+library(ggplot2)
+
+#usando ggplot para criação do gráfico
+ggplot(
+  data = Base,
+  aes(x = tempo_preso, y = score_periculosidade)) +
+  geom_point(alpha = 0.6, color = "blue") + 
+  labs(title = "Relação entre Tempo Preso e Score de Periculosidade",
+    x = "Tempo Preso (em meses)",
+    y = "Score de Periculosidade") +
+  theme_minimal() 
+
+#Questao 9 - D - calculo de correlacao / complete.obs será utilizado para garantir que dados faltantes nao sejam utilizados.
+correlacao <- cor(Base$tempo_preso, Base$score_periculosidade, use = "complete.obs")
+print(correlacao)
+
+#Questao 9 - E 
+library(dplyr)
+
+#calculando variância, desvio padrão e amplitude do score de periculosidade 
+medidas_dispersao <- Base %>%
+  summarise(
+    var_periculosidade = var(Base$score_periculosidade, na.rm = TRUE),
+    sd_periculosidade = sd(Base$score_periculosidade, na.rm = TRUE),
+    amplitude_periculosidade = max(Base$score_periculosidade, na.rm = TRUE) - min(score_periculosidade, na.rm = TRUE),
+    
+    #calculando variância, desvio padrão e amplitude da idade
+    var_idade = var(Base$idade, na.rm = TRUE),
+    sd_idade = sd(Base$idade, na.rm = TRUE),
+    amplitude_idade = max(Base$idade, na.rm = TRUE) - min(idade, na.rm = TRUE),
+    
+    #calculando variância, desvio padrão e amplitude do tempo_preso
+    var_tempo = var(Base$tempo_preso, na.rm = TRUE),
+    sd_tempo = sd(Base$tempo_preso, na.rm = TRUE),
+    amplitude_tempo = max(Base$tempo_preso, na.rm = TRUE) - min(tempo_preso, na.rm = TRUE)
+  )
+
+print(medidas_dispersao)
+
 
