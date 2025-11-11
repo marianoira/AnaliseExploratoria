@@ -8,3 +8,19 @@ Além disso, percebe-se a presença de dois outliers em indivíduos de nível m�
 
 Por fim, analisando o gráfico de barras da 5F, nota-se um valor consideravél de Não-Reincidentes.
 
+Complementando o documento, abaixo estão as fórmulas utilizadas para cálculo de cada uma das tendências estatísticas. As fórmulas foram apresentadas por mim, porém para me ajudar a formatar de maneira visualmente adequada, busquei orientação https://docs.github.com/pt/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions nesse link para obter as expressões matematicas.
+
+Média é a soma de todos os valores dividida pelo número total de observações.
+* **Média ($\bar{x}$):** 
+    $$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} $$
+
+* **Mediana:** É o valor central que divide o conjunto de dados em duas metades iguais. Para calculá-la, os dados devem ser ordenados.
+
+* **Variância ($s^2$):** Mede o quão distante um conjunto de números está de sua média.
+    $$s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2$$
+
+* **Desvio Padrão ($s$):** É a raiz quadrada da variância. Esta é a medida de dispersão mais utilizada, pois está na mesma unidade de medida que os dados originais, tornando a dispersão diretamente interpretável.
+    $$s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}$$
+
+* **Amplitude:** É a diferença entre o valor máximo ($x_{\text{máx}}$) e o valor mínimo ($x_{\text{mín}}$) observados no conjunto de dados. É a medida de dispersão mais simples, mas muito afetada por *outliers*.
+    $$\text{Amplitude} = x_{\text{máx}} - x_{\text{mín}}$$
